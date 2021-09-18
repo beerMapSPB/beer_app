@@ -24,14 +24,6 @@ class TestApiClient {
     return resJson;
   }
 
-  String _beautifyJson(String json) {
-    const _encoder = JsonEncoder.withIndent('    ');
-    final res =
-        _encoder.convert(json).replaceAll('\\n', '\n').replaceAll('\\"', '"');
-
-    return res;
-  }
-
   Future<String> _doQuery(HttpClientRequest request) async {
     final response = await request.close();
     if (response.statusCode >= 300) {
