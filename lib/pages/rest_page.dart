@@ -11,8 +11,12 @@ class RestPageWidget extends StatefulWidget {
 }
 
 class _RestPageWidgetState extends State<RestPageWidget> {
-  static const String TestURL = 'https://jsonplaceholder.typicode.com/users';
+  static const String TestURL = 'https://jsonplaceholder.typicode.com/posts';
+  static const String ExampleJSON =
+      '{"title": "foo", "body": "bar", "userId": 1}';
   final _uriStringController = TextEditingController(text: TestURL);
+  final _postDataStringController = TextEditingController(text: ExampleJSON);
+
   final _apiClient = TestApiClient();
 
   String _currentData = "NULL";
@@ -20,56 +24,78 @@ class _RestPageWidgetState extends State<RestPageWidget> {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+      padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
       child: Column(
         children: <Widget>[
-          Row(crossAxisAlignment: CrossAxisAlignment.center, children: <Widget>[
-            Text("Adress", style: TextStyle(fontSize: 16)),
-            SizedBox(width: 50),
-            Expanded(
-              child: TextField(
-                  controller: _uriStringController,
-                  decoration: InputDecoration(
-                      border: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(10.0)),
-                      focusedBorder: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(10.0),
-                          borderSide: BorderSide(color: widget.color)),
-                      hintText: TestURL,
-                      contentPadding:
-                          EdgeInsets.symmetric(horizontal: 10, vertical: 10))),
-            ),
-          ]),
-          SizedBox(height: 25),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              CustomButton(
-                  text: "POST",
-                  color: widget.color,
-                  onButtonPressed: () {
-                    setState(() {
-                      _currentData = 'NOT WORKED';
-                    });
-                  }),
-              SizedBox(width: 25),
-              CustomButton(
-                text: "GET",
-                color: widget.color,
-                onButtonPressed: () async {
-                  final String res =
-                      await _apiClient.simpleGET(_uriStringController.text);
-                  setState(() {
-                    _currentData = res;
-                  });
-                },
-              ),
-            ],
+          TextField(
+              controller: _uriStringController,
+              maxLines: 3,
+              decoration: InputDecoration(
+                  border: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(10.0)),
+                  focusedBorder: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(10.0),
+                      borderSide: BorderSide(color: widget.color)),
+                  hintText: TestURL,
+                  labelText: "REST full adress",
+                  contentPadding:
+                      EdgeInsets.symmetric(horizontal: 10, vertical: 10))),
+          SizedBox(height: 20),
+          CustomButton(
+            text: "GET",
+            color: widget.color,
+            onButtonPressed: () async {
+              final String res =
+                  await _apiClient.simpleGET(_uriStringController.text);
+              setState(() {
+                _currentData = res;
+              });
+            },
           ),
-          SizedBox(height: 25),
+          SizedBox(height: 10),
+          TextField(
+              controller: _postDataStringController,
+              maxLines: 5,
+              decoration: InputDecoration(
+                  border: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(10.0)),
+                  focusedBorder: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(10.0),
+                      borderSide: BorderSide(color: widget.color)),
+                  hintText: ExampleJSON,
+                  labelText: "POST data",
+                  contentPadding:
+                      EdgeInsets.symmetric(horizontal: 10, vertical: 10))),
+          SizedBox(height: 10),
+          CustomButton(
+              text: "POST",
+              color: widget.color,
+              onButtonPressed: () async {
+                final String res = await _apiClient.simplePOST(
+                    _uriStringController.text, _postDataStringController.text);
+                setState(() {
+                  _currentData = res;
+                });
+              }),
+          SizedBox(height: 10),
           Expanded(
               child: SingleChildScrollView(
-                  scrollDirection: Axis.vertical, child: Text(_currentData)))
+            scrollDirection: Axis.vertical,
+            child: DecoratedBox(
+                position: DecorationPosition.background,
+                decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(10.0),
+                    border: Border.all(
+                      color: widget.color,
+                    )),
+                child: Padding(
+                  padding: const EdgeInsets.all(10.0),
+                  child: Text(
+                    _currentData,
+                    textAlign: TextAlign.justify,
+                  ),
+                )),
+          ))
         ],
       ),
     );
@@ -101,26 +127,5 @@ class CustomButton extends StatelessWidget {
             textStyle: MaterialStateProperty.all(
               TextStyle(fontSize: 16, fontWeight: FontWeight.w700),
             )));
-  }
-}
-
-class DataViewer extends StatefulWidget {
-  @override
-  _DataViewerState createState() => _DataViewerState();
-}
-
-class _DataViewerState extends State<DataViewer> {
-  String _dataText = "Null";
-  final TestApiClient apiClient = TestApiClient();
-
-  void setData(String data) {
-    setState(() {
-      _dataText = data;
-    });
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    return Text('$_dataText');
   }
 }
