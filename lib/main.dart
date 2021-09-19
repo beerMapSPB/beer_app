@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:mobile_app/pages/counter_page.dart';
+import 'package:mobile_app/pages/places_page.dart';
 import 'package:mobile_app/pages/rest_page.dart';
 
 void main() {
@@ -33,7 +34,8 @@ class _MyHomePageState extends State<MyHomePage> {
   int _currentPage = 0;
   final List<Widget> _pages = [
     RestPageWidget(Colors.pinkAccent),
-    CounterPageWidget(Colors.tealAccent)
+    CounterPageWidget(Colors.tealAccent),
+    PlacesPageWidget(Colors.blue)
   ];
 
   @override
@@ -50,7 +52,9 @@ class _MyHomePageState extends State<MyHomePage> {
               BottomNavigationBarItem(
                   icon: new Icon(Icons.query_stats), label: "REST"),
               BottomNavigationBarItem(
-                  icon: new Icon(Icons.policy), label: "Counter")
+                  icon: new Icon(Icons.policy), label: "Counter"),
+              BottomNavigationBarItem(
+                  icon: new Icon(Icons.list), label: "Places")
             ]));
   }
 
