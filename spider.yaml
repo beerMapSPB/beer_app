@@ -19,7 +19,6 @@ groups:
   - path: assets/images
     class_name: AppImages
     types: [ .png, .jpg, .jpeg, .webp, .webm, .bmp ]
-#  - path: assets/vectors
-#    class_name: Svgs
-#    package: res
-#    types: [ .svg ]
+  - path: assets/logos
+    class_name: Logos
+    types: [ .svg ]
