@@ -1,29 +1,21 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
-
+import 'package:mobile_app/entity/place.dart';
+import 'package:mobile_app/entity/places.dart';
 import 'package:mobile_app/resources/resources.dart';
-import 'package:url_launcher/url_launcher.dart';
-import 'package:url_launcher/link.dart';
 
 import 'externals_app_widget.dart';
 
-class PlacesPageWidget extends StatefulWidget {
+class PlacesPageWidget extends StatelessWidget {
   final Color color;
+
+  final List<Place> _places = placesForTestes;
 
   PlacesPageWidget(this.color);
 
   @override
-  _PlacesPageWidgetState createState() => _PlacesPageWidgetState();
-}
-
-const String BIG_DESCRIPTION =
-    'Мы молодой, локальный гриль-бар на площади Мужества с атмосферой домашнего уюта и вниманием к мелочам. Практически всё, что вас окружает в нашем баре, сделано нашими руками - со вкусом и без наедалова!';
-
-class _PlacesPageWidgetState extends State<PlacesPageWidget> {
-  @override
   Widget build(BuildContext context) {
     return ListView.builder(
-        itemCount: 10,
+        itemCount: _places.length,
         itemExtent: 220,
         itemBuilder: (BuildContext context, int index) {
           return Padding(
@@ -45,11 +37,27 @@ class _PlacesPageWidgetState extends State<PlacesPageWidget> {
                 child: Column(
                   children: [
                     Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        Icon(Icons.place, color: widget.color),
-                        Text("пр-кт Просвещения, 35"),
-                        Spacer(),
-                        Text('Биршоп ● Бар')
+                        Flexible(
+                          child: Row(
+                            children: [
+                              Icon(Icons.place, color: color),
+                              Flexible(
+                                child: Text(
+                                  _places[index].adress,
+                                  overflow: TextOverflow.ellipsis,
+                                  maxLines: 2,
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                        Align(
+                            alignment: Alignment.centerRight,
+                            child: Text(_places[index].type))
+
+                        // Spacer(),
                       ],
                     ),
                     Padding(
@@ -76,14 +84,14 @@ class _PlacesPageWidgetState extends State<PlacesPageWidget> {
                               Padding(
                                 padding:
                                     const EdgeInsets.symmetric(vertical: 5),
-                                child: Text("Incident.beer.shop",
+                                child: Text(_places[index].name,
                                     style: new TextStyle(
                                         fontFamily: "Lucida",
                                         fontSize: 20.0,
-                                        color: widget.color)),
+                                        color: color)),
                               ),
                               Text(
-                                BIG_DESCRIPTION,
+                                _places[index].description,
                                 overflow: TextOverflow.ellipsis,
                                 maxLines: 2,
                               ),
@@ -91,11 +99,13 @@ class _PlacesPageWidgetState extends State<PlacesPageWidget> {
                                 padding:
                                     const EdgeInsets.symmetric(vertical: 1),
                                 child: ExternalAppsWidget(
-                                  phone: '+7 (931) 398-85-67',
-                                  instagram: 'incident.beer.shop',
-                                  vk: 'beerbagspb',
-                                  web: 'anime.anidub.life/anime',
-                                  telegram: 'caramella_astra',
+                                  phone: _places[index].externalLinks.phone,
+                                  instagram:
+                                      _places[index].externalLinks.instagram,
+                                  vk: _places[index].externalLinks.vk,
+                                  web: _places[index].externalLinks.web,
+                                  telegram:
+                                      _places[index].externalLinks.telegram,
                                 ),
                               ),
                               // SizedBox(height: 30)
@@ -115,7 +125,7 @@ class _PlacesPageWidgetState extends State<PlacesPageWidget> {
                         Icon(Icons.highlight_off, size: 15, color: Colors.red),
                         Padding(
                           padding: const EdgeInsets.only(left: 5.0),
-                          child: Text('Закрыто до 10:00'),
+                          child: Text(_places[index].operatingModeToHuman()),
                         ),
                         Spacer(),
                         Image(
