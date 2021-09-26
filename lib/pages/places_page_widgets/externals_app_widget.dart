@@ -50,38 +50,47 @@ class ExternalAppsWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Row(
       children: [
-        IconButton(
-          onPressed: _phone != null ? _makePhoneCall : null,
-          padding: const EdgeInsets.all(0.0),
-          icon: SvgPicture.asset(
-            Logos.phone,
-            height: 30,
-            width: 30,
-          ),
-        ),
-        IconButton(
-            onPressed: _vk != null ? () => _openApp('$VK_URL/$_vk') : null,
-            padding: const EdgeInsets.all(0.0),
-            icon: SvgPicture.asset(Logos.vk, height: 35, width: 35)),
-        IconButton(
-            onPressed: _telegram != null
+        GestureDetector(
+            onTap: _phone != null ? _makePhoneCall : null,
+            child: _getIcon(
+                SvgPicture.asset(
+                  Logos.phone,
+                  height: 30,
+                  width: 30,
+                ),
+                _phone != null)),
+        GestureDetector(
+            onTap: _vk != null ? () => _openApp('$VK_URL/$_vk') : null,
+            child: _getIcon(SvgPicture.asset(Logos.vk, height: 35, width: 35),
+                _vk != null)),
+        GestureDetector(
+            onTap: _telegram != null
                 ? () => _openApp('$TELEGRAM_URL/$_telegram')
                 : null,
-            padding: const EdgeInsets.all(0.0),
-            icon: SvgPicture.asset(Logos.telegram, height: 35, width: 35)),
-        IconButton(
-            onPressed:
-                _web != null ? () => _openWebView('$WEB_URL/$_web') : null,
-            padding: const EdgeInsets.all(0.0),
-            icon: SvgPicture.asset(Logos.site, height: 35, width: 35)),
-        IconButton(
-            onPressed: _instagram != null
+            child: _getIcon(
+                SvgPicture.asset(Logos.telegram, height: 35, width: 35),
+                _telegram != null)),
+        GestureDetector(
+            onTap: _web != null ? () => _openWebView('$WEB_URL/$_web') : null,
+            child: _getIcon(SvgPicture.asset(Logos.site, height: 35, width: 35),
+                _web != null)),
+        GestureDetector(
+            onTap: _instagram != null
                 ? () => _openApp('$INSTAGRAM_URL/$_instagram')
                 : null,
-            padding: const EdgeInsets.all(0.0),
-            icon: SvgPicture.asset(Logos.instagram, height: 30, width: 30)),
+            child: _getIcon(
+                SvgPicture.asset(Logos.instagram, height: 30, width: 30),
+                _instagram != null)),
       ],
     );
+  }
+
+  Widget _getIcon(SvgPicture picture, bool isExist) {
+    if (isExist) {
+      return picture;
+    } else {
+      return ColorFiltered(colorFilter: GREYSCALE, child: picture);
+    }
   }
 
   static const PHONE_URL = 'tel:';
@@ -89,4 +98,28 @@ class ExternalAppsWidget extends StatelessWidget {
   static const VK_URL = 'https://vk.com';
   static const TELEGRAM_URL = 'https://t.me';
   static const WEB_URL = 'https://';
+
+  // https://www.woolha.com/tutorials/flutter-using-colorfiltered-widget-examples
+  static const ColorFilter GREYSCALE = ColorFilter.matrix(<double>[
+    0.2126,
+    0.7152,
+    0.0722,
+    0,
+    0,
+    0.2126,
+    0.7152,
+    0.0722,
+    0,
+    0,
+    0.2126,
+    0.7152,
+    0.0722,
+    0,
+    0,
+    0,
+    0,
+    0,
+    1,
+    0,
+  ]);
 }
