@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mobile_app/pages/beers_page.dart';
 import 'package:mobile_app/pages/counter_page.dart';
 import 'package:mobile_app/pages/places_page_widgets/places_page.dart';
 import 'package:mobile_app/pages/rest_page.dart';
@@ -14,7 +15,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        primarySwatch: Colors.purple,
       ),
       home: MyHomePage(title: 'Flutter Mobile App'),
     );
@@ -35,7 +36,8 @@ class _MyHomePageState extends State<MyHomePage> {
   final List<Widget> _pages = [
     RestPageWidget(Colors.pinkAccent),
     CounterPageWidget(Colors.tealAccent),
-    PlacesPageWidget(Colors.blue)
+    PlacesPageWidget(Colors.blue),
+    BeersPageWidget(Colors.brown)
   ];
 
   @override
@@ -46,6 +48,7 @@ class _MyHomePageState extends State<MyHomePage> {
         ),
         body: _pages[_currentPage],
         bottomNavigationBar: BottomNavigationBar(
+            type: BottomNavigationBarType.fixed, // For 3+ items
             currentIndex: _currentPage,
             onTap: onTabTapped,
             items: [
@@ -54,7 +57,9 @@ class _MyHomePageState extends State<MyHomePage> {
               BottomNavigationBarItem(
                   icon: new Icon(Icons.policy), label: "Counter"),
               BottomNavigationBarItem(
-                  icon: new Icon(Icons.list), label: "Places")
+                  icon: new Icon(Icons.list), label: "Places"),
+              BottomNavigationBarItem(
+                  icon: new Icon(Icons.sports_bar), label: "Beers")
             ]));
   }
 
