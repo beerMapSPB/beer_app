@@ -85,7 +85,7 @@ class PlacesPageWidget extends StatelessWidget {
                                 padding:
                                     const EdgeInsets.symmetric(vertical: 5),
                                 child: Text(_places[index].name,
-                                    style: new TextStyle(
+                                    style: TextStyle(
                                         fontFamily: "Lucida",
                                         fontSize: 20.0,
                                         color: color)),

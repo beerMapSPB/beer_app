@@ -14,7 +14,7 @@ final List<Place> placesForTestes = [
           phone: '+7 (931) 398-85-67',
           instagram: 'incident.beer.shop',
           vk: 'beerbagspb',
-          web: 'anime.anidub.life/anime',
+          web: 'www.anime.anidub.life/anime',
           telegram: 'caramella_astra')),
   Place(
       name: "Beer Geek",
@@ -25,7 +25,7 @@ final List<Place> placesForTestes = [
       logo: AppImages.incidentBeerShop,
       externalLinks: PlaceExternalLinks(
           instagram: 'beer.bag',
-          web: 'untappd.com/v/beer-geek/9945496',
+          web: 'www.untappd.com/v/beer-geek/9945496',
           telegram: 'caramella_astra')),
   Place(
       name: "Beer Bag",
@@ -46,7 +46,7 @@ final List<Place> placesForTestes = [
           phone: '89213652675',
           instagram: 'craftbeerspb',
           vk: 'craftbeershop',
-          web: 'untappd.com/v/craft-beer-shop/3856103')),
+          web: 'www.untappd.com/v/craft-beer-shop/3856103')),
   Place(
       name: "Ohta Rill Brewery",
       description: "Тапрум пивоварни Ohta Rill. Пицца, кухня.",
@@ -55,7 +55,7 @@ final List<Place> placesForTestes = [
       rate: 2.0,
       logo: AppImages.incidentBeerShop,
       externalLinks: PlaceExternalLinks(
-          web: "taproom.ohtarill.com", instagram: "ohtarill_taproom")),
+          web: "www.taproom.ohtarill.com", instagram: "ohtarill_taproom")),
   Place(
       name: "Woodman bar&shop",
       description: "Бар с крафтовым пивом, закусками и настольным футболом.",
