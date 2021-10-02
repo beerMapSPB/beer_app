@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:mobile_app/pages/beers_page.dart';
+import 'package:mobile_app/pages/beers_page_widgets.dart/beers_page.dart';
 import 'package:mobile_app/pages/counter_page.dart';
 import 'package:mobile_app/pages/places_page_widgets/places_page.dart';
 import 'package:mobile_app/pages/rest_page.dart';
