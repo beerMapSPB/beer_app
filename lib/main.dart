@@ -4,6 +4,8 @@ import 'package:mobile_app/pages/counter_page.dart';
 import 'package:mobile_app/pages/places_page_widgets/places_page.dart';
 import 'package:mobile_app/pages/rest_page.dart';
 
+import 'pages/place_page_widgets/place_page_widget.dart';
+
 void main() {
   runApp(MyApp());
 }
@@ -37,6 +39,7 @@ class _MyHomePageState extends State<MyHomePage> {
     RestPageWidget(Colors.pinkAccent),
     CounterPageWidget(Colors.tealAccent),
     PlacesPageWidget(Colors.blue),
+    PlacePageWidget(placeId: 0),
     BeersPageWidget(Colors.brown)
   ];
 
@@ -58,6 +61,8 @@ class _MyHomePageState extends State<MyHomePage> {
                   icon: new Icon(Icons.policy), label: "Counter"),
               BottomNavigationBarItem(
                   icon: new Icon(Icons.list), label: "Places"),
+              BottomNavigationBarItem(
+                  icon: new Icon(Icons.aod_outlined), label: "Place"),
               BottomNavigationBarItem(
                   icon: new Icon(Icons.sports_bar), label: "Beers")
             ]));
