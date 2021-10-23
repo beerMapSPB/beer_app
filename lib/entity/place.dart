@@ -5,6 +5,7 @@ class Place {
   final String type;
   final double rate;
   final String logo;
+  String interior;
   final PlaceExternalLinks externalLinks;
 
   String operatingModeToHuman() {
@@ -18,7 +19,12 @@ class Place {
       required this.type,
       required this.rate,
       required this.logo,
-      required this.externalLinks});
+      this.interior = '',
+      required this.externalLinks}) {
+    if (this.interior.isEmpty) {
+      this.interior = this.logo;
+    }
+  }
 }
 
 class PlaceExternalLinks {
