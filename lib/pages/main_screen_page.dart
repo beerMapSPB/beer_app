@@ -12,7 +12,7 @@ class MainScreenWidget extends StatefulWidget {
 }
 
 class _MainScreenWidgetState extends State<MainScreenWidget> {
-  int _currentTab = 0;
+  int _currentTab = 1;
 
   void _onSelectedTab(int index) {
     if (_currentTab != index) {
@@ -31,9 +31,8 @@ class _MainScreenWidgetState extends State<MainScreenWidget> {
       body: IndexedStack(
         index: _currentTab,
         children: [
-          PlacesPageWidget(Colors.blue),
-          // PlacePageWidget(placeId: 0),
           BeersPageWidget(Colors.brown),
+          PlacesPageWidget(Colors.blue),
           RestPageWidget(Colors.pinkAccent),
         ],
       ),
@@ -41,11 +40,9 @@ class _MainScreenWidgetState extends State<MainScreenWidget> {
         type: BottomNavigationBarType.fixed,
         currentIndex: _currentTab,
         items: [
-          BottomNavigationBarItem(icon: new Icon(Icons.list), label: "Places"),
-          // BottomNavigationBarItem(
-          //     icon: new Icon(Icons.aod_outlined), label: "Place"),
           BottomNavigationBarItem(
               icon: new Icon(Icons.sports_bar), label: "Beers"),
+          BottomNavigationBarItem(icon: new Icon(Icons.list), label: "Places"),
           BottomNavigationBarItem(
               icon: new Icon(Icons.query_stats), label: "REST"),
         ],
