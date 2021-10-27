@@ -14,16 +14,6 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(primarySwatch: Colors.purple),
-      // theme: ThemeData(
-      //   appBarTheme: AppBarTheme(
-      //     backgroundColor: Colors.amberAccent,
-      //   ),
-      // bottomNavigationBarTheme: BottomNavigationBarThemeData(
-      //   backgroundColor: Colors.pink,
-      //   selectedItemColor: Colors.pink,
-      //   unselectedItemColor: Colors.grey,
-      // ),
-      // ),
       routes: {
         '/main_screen': (context) => MainScreenWidget(),
         '/main_screen/place_detail': (context) {

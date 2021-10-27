@@ -18,8 +18,7 @@ class _PlacesPageWidgetState extends State<PlacesPageWidget> {
   final List<Place> _places = placesForTestes;
 
   void _onPlaceTap(int index) {
-    print('index: $index');
-    final id = index;
+    final int id = index;
     Navigator.of(context).pushNamed(
       '/main_screen/place_detail',
       arguments: id,
