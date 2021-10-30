@@ -3,30 +3,32 @@ const MANIFEST = 'flutter-app-manifest';
 const TEMP = 'flutter-temp-cache';
 const CACHE_NAME = 'flutter-app-cache';
 const RESOURCES = {
-  "favicon.png": "5dcef449791fa27946b3d35ad8803796",
-"index.html": "2fca1c8675827b78c41de2e1a1375d71",
-"/": "2fca1c8675827b78c41de2e1a1375d71",
+  "version.json": "b2df31813d2373f4fe3cee53b8521bfe",
+"favicon.png": "5dcef449791fa27946b3d35ad8803796",
+"assets/fonts/MaterialIcons-Regular.otf": "4e6447691c9509f7acdbf8a931a85ca1",
 "assets/NOTICES": "75e0fb3d1e6ac9ed4fd10287e07f6b5d",
 "assets/assets/images/Stars3-5.png": "62ba3644598157f624edd7df8f8449c4",
-"assets/assets/images/beer-example.png": "1ee739bb65f62698825183dc7a2b2ac5",
-"assets/assets/images/IncidentBeerShop.jpg": "91219c083b12170149ee63add1faf873",
-"assets/assets/images/beer-blue.jpeg": "8725f4df3f8e7a3d49eb2f99fbba82f3",
-"assets/assets/images/beer-green.jpeg": "f5f0fb143b42a288c92a4e289c1735ea",
+"assets/assets/images/interior.jpg": "65abb6a0a8ce70f8356cdcb44501e727",
 "assets/assets/images/beer_rate.png": "6089a7aa0b8582a601842af47b634d26",
+"assets/assets/images/beer-green.jpeg": "f5f0fb143b42a288c92a4e289c1735ea",
+"assets/assets/images/map.png": "af23283ac54171ad2b9862a5b6abf72c",
+"assets/assets/images/beer-blue.jpeg": "8725f4df3f8e7a3d49eb2f99fbba82f3",
+"assets/assets/images/IncidentBeerShop.jpg": "91219c083b12170149ee63add1faf873",
+"assets/assets/images/beer-example.png": "1ee739bb65f62698825183dc7a2b2ac5",
 "assets/assets/logos/phone.svg": "6cd1e37989c65c365d4219b2b8780803",
-"assets/assets/logos/vk.svg": "d267ba8342490129aab70e0880593672",
 "assets/assets/logos/telegram.svg": "bcfa91175afbb5e5f2d4e287c08d22ab",
-"assets/assets/logos/site.svg": "c3613aa44ec6ac002e8b2988b0793ed1",
+"assets/assets/logos/vk.svg": "d267ba8342490129aab70e0880593672",
 "assets/assets/logos/instagram.svg": "c15d87d3dc3bb2ca4cf4a6a3e110cc36",
-"assets/packages/cupertino_icons/assets/CupertinoIcons.ttf": "6d342eb68f170c97609e9da345464e5e",
+"assets/assets/logos/site.svg": "c3613aa44ec6ac002e8b2988b0793ed1",
 "assets/FontManifest.json": "dc3d03800ccca4601324923c0b1d6d57",
-"assets/fonts/MaterialIcons-Regular.otf": "4e6447691c9509f7acdbf8a931a85ca1",
-"assets/AssetManifest.json": "4d08fdbddabffba57d7b8ec07a9afd8d",
-"version.json": "b2df31813d2373f4fe3cee53b8521bfe",
-"manifest.json": "35bae752f540266b60c0bfb52299ad05",
-"icons/Icon-512.png": "96e752610906ba2a93c65f8abe1645f1",
+"assets/AssetManifest.json": "6d08dabd1217af70ad9aeb40b04c7cff",
+"assets/packages/cupertino_icons/assets/CupertinoIcons.ttf": "6d342eb68f170c97609e9da345464e5e",
 "icons/Icon-192.png": "ac9a721a12bbc803b44f645561ecb1e1",
-"main.dart.js": "da882170fdd8d85418f6d77301d1db50"
+"icons/Icon-512.png": "96e752610906ba2a93c65f8abe1645f1",
+"main.dart.js": "5cb744558a2063a2b7034258532c1f1e",
+"manifest.json": "35bae752f540266b60c0bfb52299ad05",
+"index.html": "656e006d7287ce6de35395a9a7e6377c",
+"/": "656e006d7287ce6de35395a9a7e6377c"
 };
 
 // The application shell files that are downloaded before a service worker can
