@@ -10,6 +10,7 @@ final List<Place> placesForTestes = [
       type: "Биршоп ● Бар",
       rate: 2.0,
       logo: AppImages.incidentBeerShop,
+      interior: AppImages.interior,
       externalLinks: PlaceExternalLinks(
           phone: '+7 (931) 398-85-67',
           instagram: 'incident.beer.shop',

@@ -4,6 +4,12 @@ import 'package:mobile_app/resources/resources.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class ExternalAppsWidget extends StatelessWidget {
+  final String? _phone;
+  final String? _instagram;
+  final String? _vk;
+  final String? _telegram;
+  final String? _web;
+
   const ExternalAppsWidget(
       {Key? key,
       String? phone,
@@ -17,12 +23,6 @@ class ExternalAppsWidget extends StatelessWidget {
         _telegram = telegram,
         _web = web,
         super(key: key);
-
-  final String? _phone;
-  final String? _instagram;
-  final String? _vk;
-  final String? _telegram;
-  final String? _web;
 
   void _openWebView(String url) async => await canLaunch(url)
       ? await launch(url,

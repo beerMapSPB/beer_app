@@ -10,6 +10,8 @@ void main() {
     expect(true, File(AppImages.beerExample).existsSync());
     expect(true, File(AppImages.stars35).existsSync());
     expect(true, File(AppImages.beerRate).existsSync());
+    expect(true, File(AppImages.map).existsSync());
+    expect(true, File(AppImages.interior).existsSync());
     expect(true, File(AppImages.beerGreen).existsSync());
   });
 }
