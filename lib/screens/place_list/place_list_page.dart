@@ -3,7 +3,7 @@ import 'package:mobile_app/entity/place.dart';
 import 'package:mobile_app/entity/places.dart';
 import 'package:mobile_app/resources/resources.dart';
 
-import 'externals_app_widget.dart';
+import 'controls/externals_app_widget.dart';
 
 class PlacesPageWidget extends StatefulWidget {
   final Color color;

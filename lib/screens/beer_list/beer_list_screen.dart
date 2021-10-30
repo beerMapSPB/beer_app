@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:mobile_app/entity/beer.dart';
 import 'package:mobile_app/entity/beers.dart';
-import 'package:mobile_app/pages/beers_page_widgets.dart/beer_image_wdget.dart';
-import 'package:mobile_app/pages/beers_page_widgets.dart/beer_main_info_widget.dart';
-import 'package:mobile_app/pages/beers_page_widgets.dart/beer_params_widget.dart';
-import 'package:mobile_app/pages/beers_page_widgets.dart/untappd_rating_widget.dart';
+
+import 'controls/image.dart';
+import 'controls/main_info.dart';
+import 'controls/params.dart';
+import 'controls/untappd_rating.dart';
 
 class BeersPageWidget extends StatelessWidget {
   final Color color;
