@@ -1,16 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:mobile_app/entity/place.dart';
 import 'package:mobile_app/entity/places.dart';
-import 'package:mobile_app/pages/place_page_widgets/interior.dart';
-import 'package:mobile_app/pages/places_page_widgets/externals_app_widget.dart';
+import 'package:mobile_app/screens/place_list/controls/externals_app_widget.dart';
 
-import 'adress.dart';
-import 'communication.dart';
-import 'description.dart';
-import 'hours.dart';
-import 'main_header.dart';
-import 'map.dart';
-import 'place_rating.dart';
+import 'controls/adress.dart';
+import 'controls/communication.dart';
+import 'controls/description.dart';
+import 'controls/hours.dart';
+import 'controls/interior.dart';
+import 'controls/main_header.dart';
+import 'controls/map.dart';
+import 'controls/place_rating.dart';
 
 class PlacePageWidget extends StatefulWidget {
   final int placeId;

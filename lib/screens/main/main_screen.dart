@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:mobile_app/pages/places_page_widgets/places_page.dart';
+import 'package:mobile_app/screens/place_list/place_list_page.dart';
 
-import 'beers_page_widgets.dart/beers_page.dart';
-import 'rest_page.dart';
+import '../beer_list/beer_list_screen.dart';
+import '../rest/rest_page.dart';
 
 class MainScreenWidget extends StatefulWidget {
   MainScreenWidget({Key? key}) : super(key: key);

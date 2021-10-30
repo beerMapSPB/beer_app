@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:mobile_app/pages/place_page_widgets/place_page_widget.dart';
+import 'package:mobile_app/screens/place/place_screen.dart';
 
-import 'pages/main_screen_page.dart';
+import 'screens/main/main_screen.dart';
 
 void main() {
   runApp(MyApp());
