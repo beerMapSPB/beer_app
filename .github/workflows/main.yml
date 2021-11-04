@@ -31,7 +31,7 @@ jobs:
         run: flutter pub get
       
       - name: Put Private Keys to code
-        run: sed -i 's/PUT SECRET API KEY HERE/${{ secrets.MAPBOX_PUBLIC_1 }}/g' ./lib/secrets/api_keys.dart | sleep 4 | flutter format ./lib/secrets/api_keys.dart
+        run: sed -i 's/MAPBOX_SECRET_TOKEN/${{ secrets.MAPBOX_SECRET_TOKEN_PROD }}/g' ./android/gradle.properties
 
       - name: Enable flutter web
         run: flutter config --enable-web
