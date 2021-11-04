@@ -32,9 +32,6 @@ jobs:
       
       - name: Put Private Keys to code
         run: sed -i 's/PUT SECRET API KEY HERE/${{ secrets.MAPBOX_PUBLIC_1 }}/g' ./lib/secrets/api_keys.dart | sleep 4 | flutter format ./lib/secrets/api_keys.dart
-        
-      - name: Check Private Keys to code
-        run: sleep 4 | cat ./lib/secrets/api_keys.dart
 
       - name: Enable flutter web
         run: flutter config --enable-web
