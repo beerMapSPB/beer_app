@@ -45,4 +45,5 @@ app.*.map.json
 /android/app/profile
 /android/app/release
 
-lib/secrets/api_keys.dart
+# Contain secret keys
+lib/secrets/map_consts.dart
