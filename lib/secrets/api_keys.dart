@@ -1,3 +1,3 @@
 class ApiKeys {
-  static const MAPBOX_KEY = 'PUT SECRET API KEY HERE';
+  static const String MAP_ACCESS_TOKEN = 'PUT SECRET API KEY HERE';
 }
