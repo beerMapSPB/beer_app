@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_map/flutter_map.dart';
 import 'package:latlong2/latlong.dart';
-import 'package:mobile_app/secrets/api_keys.dart';
+import 'package:mobile_app/secrets/map_consts.dart';
 
 class MapPageWidget extends StatefulWidget {
   MapPageWidget({Key? key}) : super(key: key);
@@ -16,35 +16,29 @@ class _MapPageWidgetState extends State<MapPageWidget> {
     return new Scaffold(
         body: FlutterMap(
       options: MapOptions(
-        center: LatLng(51.5, -0.09),
-        zoom: 13.0,
-      ),
+          center: LatLng(59.932242, 30.339199), zoom: 13.0, maxZoom: 18),
       layers: [
         TileLayerOptions(
           urlTemplate:
-              "https://api.mapbox.com/styles/v1/slowbroshka/ckvei3e6yfeoq14o8qsmu9c9y/tiles/256/{z}/{x}/{y}@2x?access_token=sk.eyJ1Ijoic2xvd2Jyb3Noa2EiLCJhIjoiY2t2bnE1aGdvN284cDJ1cXdnbXI1OHY3YyJ9._Kv_UJd0NsrJs-8DL57JXA",
+              'https://api.mapbox.com/styles/v1/${MapConsts.STYLE_PART}/tiles/256/{z}/{x}/{y}@2x?access_token=${MapConsts.ACCESS_TOKEN}',
           additionalOptions: {
-            'accessToken': 'sk.eyJ1Ijoic2xvd2Jyb3Noa2EiLCJhIjoiY2t2bnE1aGdvN284cDJ1cXdnbXI1OHY3YyJ9._Kv_UJd0NsrJs-8DL57JXA',
-            'id': 'mapbox.mapbox-streets-v8'
+            'accessToken': MapConsts.ACCESS_TOKEN,
+            'id': MapConsts.DATA_SOURCE
           },
         ),
         MarkerLayerOptions(
           markers: [
             Marker(
-              width: 80.0,
-              height: 80.0,
-              point: LatLng(51.5, -0.09),
+              width: 40.0,
+              height: 40.0,
+              point: LatLng(59.95186452200175, 30.304241219184032),
               builder: (ctx) => Container(
-                child: FlutterLogo(),
+                child: new Icon(Icons.place),
               ),
             ),
           ],
         ),
       ],
     ));
-  }
-
-  void onStyleLoadedCallback() {
-    print('onStyleLoadedCallback');
   }
 }
