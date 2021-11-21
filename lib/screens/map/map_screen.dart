@@ -22,9 +22,9 @@ class _MapPageWidgetState extends State<MapPageWidget> {
       layers: [
         TileLayerOptions(
           urlTemplate:
-              "https://api.mapbox.com/styles/v1/slowbroshka/ckvei3e6yfeoq14o8qsmu9c9y/tiles/256/{z}/{x}/{y}@2x?access_token=$ApiKeys.MAP_ACCESS_TOKEN",
+              "https://api.mapbox.com/styles/v1/slowbroshka/ckvei3e6yfeoq14o8qsmu9c9y/tiles/256/{z}/{x}/{y}@2x?access_token=sk.eyJ1Ijoic2xvd2Jyb3Noa2EiLCJhIjoiY2t2bnE1aGdvN284cDJ1cXdnbXI1OHY3YyJ9._Kv_UJd0NsrJs-8DL57JXA",
           additionalOptions: {
-            'accessToken': ApiKeys.MAP_ACCESS_TOKEN,
+            'accessToken': 'sk.eyJ1Ijoic2xvd2Jyb3Noa2EiLCJhIjoiY2t2bnE1aGdvN284cDJ1cXdnbXI1OHY3YyJ9._Kv_UJd0NsrJs-8DL57JXA',
             'id': 'mapbox.mapbox-streets-v8'
           },
         ),
