@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mobile_app/screens/map/map_screen.dart';
 import 'package:mobile_app/screens/place_list/place_list_page.dart';
 
 import '../beer_list/beer_list_screen.dart';
@@ -33,6 +34,7 @@ class _MainScreenWidgetState extends State<MainScreenWidget> {
         children: [
           BeersPageWidget(Colors.brown),
           PlacesPageWidget(Colors.blue),
+          MapPageWidget(),
           RestPageWidget(Colors.pinkAccent),
         ],
       ),
@@ -43,6 +45,7 @@ class _MainScreenWidgetState extends State<MainScreenWidget> {
           BottomNavigationBarItem(
               icon: new Icon(Icons.sports_bar), label: "Beers"),
           BottomNavigationBarItem(icon: new Icon(Icons.list), label: "Places"),
+          BottomNavigationBarItem(icon: new Icon(Icons.map), label: "Map"),
           BottomNavigationBarItem(
               icon: new Icon(Icons.query_stats), label: "REST"),
         ],
