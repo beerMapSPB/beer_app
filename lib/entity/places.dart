@@ -1,6 +1,8 @@
 import 'package:mobile_app/entity/place.dart';
 import 'package:mobile_app/resources/resources.dart';
 
+import 'package:latlong2/latlong.dart';
+
 final List<Place> placesForTestes = [
   Place(
       name: "Incident.beer.shop",
@@ -10,6 +12,7 @@ final List<Place> placesForTestes = [
       type: "Биршоп ● Бар",
       rate: 2.0,
       logo: AppImages.incidentBeerShop,
+      latLng: LatLng(59.90011730629197, 30.24267431132985),
       interior: AppImages.interior,
       externalLinks: PlaceExternalLinks(
           phone: '+7 (931) 398-85-67',
@@ -24,6 +27,7 @@ final List<Place> placesForTestes = [
       type: "Биршоп",
       rate: 2.0,
       logo: AppImages.incidentBeerShop,
+      latLng: LatLng(59.92668059797074, 30.26020849806329),
       externalLinks: PlaceExternalLinks(
           instagram: 'beer.bag',
           web: 'www.untappd.com/v/beer-geek/9945496',
@@ -35,6 +39,7 @@ final List<Place> placesForTestes = [
       type: "Биршоп ● Бар",
       rate: 2.0,
       logo: AppImages.incidentBeerShop,
+      latLng: LatLng(59.960168318953464, 30.327069628585416),
       externalLinks: PlaceExternalLinks(telegram: 'beerbagchat')),
   Place(
       name: "CRAFT BEER SHOP",
@@ -43,6 +48,7 @@ final List<Place> placesForTestes = [
       type: "Биршоп",
       rate: 2.0,
       logo: AppImages.incidentBeerShop,
+      latLng: LatLng(59.90098698707921, 30.30182810749434),
       externalLinks: PlaceExternalLinks(
           phone: '89213652675',
           instagram: 'craftbeerspb',
@@ -55,6 +61,7 @@ final List<Place> placesForTestes = [
       type: "Бар",
       rate: 2.0,
       logo: AppImages.incidentBeerShop,
+      latLng: LatLng(59.92432176999012, 30.329943794362826),
       externalLinks: PlaceExternalLinks(
           web: "www.taproom.ohtarill.com", instagram: "ohtarill_taproom")),
   Place(
@@ -64,5 +71,6 @@ final List<Place> placesForTestes = [
       type: "Бар111",
       rate: 2.0,
       logo: AppImages.incidentBeerShop,
+      latLng: LatLng(59.928418296110344, 30.338629586226176),
       externalLinks: PlaceExternalLinks()),
 ];
