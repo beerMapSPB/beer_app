@@ -1,22 +1,42 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_map/flutter_map.dart';
-import 'package:latlong2/latlong.dart';
+import 'package:mobile_app/entity/place.dart';
+import 'package:mobile_app/entity/places.dart';
+import 'package:mobile_app/screens/map/citys.dart';
+import 'package:mobile_app/screens/map/place_marker_info.dart';
 import 'package:mobile_app/secrets/map_consts.dart';
 
+import 'controls/place_marker.dart';
+
 class MapPageWidget extends StatefulWidget {
+  final List<Place> _places = placesForTestes;
+
   MapPageWidget({Key? key}) : super(key: key);
 
   @override
-  _MapPageWidgetState createState() => _MapPageWidgetState();
+  _MapPageWidgetState createState() => _MapPageWidgetState(_places
+      .map((elm) => PlaceMarker.createMarker(
+          PlaceMarkerInfo(name: elm.name, location: elm.latLng)))
+      .toList());
 }
 
 class _MapPageWidgetState extends State<MapPageWidget> {
+  final List<Marker> placesMarker;
+
+  _MapPageWidgetState(this.placesMarker);
+
   @override
   Widget build(BuildContext context) {
     return new Scaffold(
         body: FlutterMap(
       options: MapOptions(
-          center: LatLng(59.932242, 30.339199), zoom: 13.0, maxZoom: 18),
+          zoom: 12.0,
+          maxZoom: 18,
+          minZoom: 10,
+          center: CityBoundaries.spb.center,
+          bounds: CityBoundaries.spb,
+          nePanBoundary: CityBoundaries.spb.northEast,
+          swPanBoundary: CityBoundaries.spb.southWest),
       layers: [
         TileLayerOptions(
           urlTemplate:
@@ -27,16 +47,7 @@ class _MapPageWidgetState extends State<MapPageWidget> {
           },
         ),
         MarkerLayerOptions(
-          markers: [
-            Marker(
-              width: 40.0,
-              height: 40.0,
-              point: LatLng(59.95186452200175, 30.304241219184032),
-              builder: (ctx) => Container(
-                child: new Icon(Icons.place),
-              ),
-            ),
-          ],
+          markers: placesMarker,
         ),
       ],
     ));

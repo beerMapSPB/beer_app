@@ -1,3 +1,5 @@
+import 'package:latlong2/latlong.dart';
+
 class Place {
   final String name;
   final String description;
@@ -5,6 +7,7 @@ class Place {
   final String type;
   final double rate;
   final String logo;
+  final LatLng latLng;
   String interior;
   final PlaceExternalLinks externalLinks;
 
@@ -18,6 +21,7 @@ class Place {
       required this.adress,
       required this.type,
       required this.rate,
+      required this.latLng,
       required this.logo,
       this.interior = '',
       required this.externalLinks}) {
