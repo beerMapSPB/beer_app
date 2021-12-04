@@ -15,13 +15,13 @@ class MapPageWidget extends StatefulWidget {
 
   @override
   _MapPageWidgetState createState() => _MapPageWidgetState(_places
-      .map((elm) =>
-          PlaceMarker(PlaceMarkerInfo(name: elm.name, location: elm.latLng)))
+      .map((elm) => PlaceMarker.createMarker(
+          PlaceMarkerInfo(name: elm.name, location: elm.latLng)))
       .toList());
 }
 
 class _MapPageWidgetState extends State<MapPageWidget> {
-  final List<PlaceMarker> placesMarker;
+  final List<Marker> placesMarker;
 
   _MapPageWidgetState(this.placesMarker);
 
