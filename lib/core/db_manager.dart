@@ -22,6 +22,10 @@ class DatabaseManager {
   }
 
   FutureOr<void> _onCreate(Database db, int version) async {
+    _createTags(db, version);
+  }
+
+  FutureOr<void> _createTags(Database db, int version) async {
     await db.execute('''
     create table Tags
 (

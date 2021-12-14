@@ -30,7 +30,7 @@ class TestApiClient {
       return 'BAD Query\nStatus code: ${response.statusCode.toString()}\nURL: ${request.uri.toString()}';
     }
     final rawStr = await response.transform(utf8.decoder).toList();
-    final resJson = rawStr.join();
+    final resJson = jsonDecode(rawStr.join())['items'].toString();
 
     return resJson;
   }
