@@ -11,7 +11,8 @@ class RestPageWidget extends StatefulWidget {
 }
 
 class _RestPageWidgetState extends State<RestPageWidget> {
-  static const String TestURL = 'https://jsonplaceholder.typicode.com/posts';
+  static const String TestURL =
+      'https://beer-map-spb-api.herokuapp.com/api/v1.0';
   static const String ExampleJSON =
       '{"title": "foo", "body": "bar", "userId": 1}';
   final _uriStringController = TextEditingController(text: TestURL);
